@@ -101,7 +101,9 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = models => {
     User.hasOne(models.Photo, {
-      foreignKey: 'UserId'
+      foreignKey: 'UserId',
+      onUpdate: 'CASCADE', 
+      onDelete: 'CASCADE'
     });
     User.hasOne(models.SocialMedia, {
       foreignKey: 'UserId'

@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Comment.associate = (models) => {
         Comment.belongsTo(models.User, {foreignKey: "UserId"})
-        Comment.belongsTo(models.Photo, {foreignKey: "PhotoId"})
+        Comment.belongsTo(models.Photo, {foreignKey: "PhotoId", onDelete: "CASCADE"})
     }
 
     return Comment
